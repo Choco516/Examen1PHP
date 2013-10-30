@@ -1,11 +1,10 @@
 <?php
 
 $var= new Conf();
-echo $var->getUserDB();
+//echo $var->getUserDB();
 
 Class Conf
 {
-
    private $_domain;
    private $_userdatabase;
    private $_passdatabase;
@@ -23,7 +22,7 @@ Class Conf
 
    public function __construct(){
       
-      include 'config.php';
+      include 'confi.php';
       $appSettings = new SimpleXMLElement($xmlstr);
       $this->_hostdatabase=$appSettings->database[0]->database_host;
       $this->_database=$appSettings->database[0]->database_name;

@@ -5,7 +5,7 @@ $xmlstr = <<<XML
 
  <database>
   <database_host>localhost</database_host>
-  <database_name>database</database_name>
+  <database_name>bd_estudiantes</database_name>
   <database_user>root</database_user>
   <database_password></database_password>
 </database>
