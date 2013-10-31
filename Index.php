@@ -87,10 +87,13 @@ while ($recorido = mysql_fetch_array($consulta1)) {
 										$almacenar10=$recorido['first_name']. "\n";
 										//La variable almacenar capta el recorrido de la columna first_name
 
-											$datos = mysql_query("SELECT first_name, email FROM student WHERE id='$almacenar2'");
+											$consulta11 = mysql_query("SELECT first_name, email FROM student WHERE id='$almacenar2'");
 											// Esta consulta  da todos los registros de  first_name y email de la tabla student donde id sea igual al que tenemos almacenado en la variable almacenar2
-											while ($recorido = mysql_fetch_array($datos)) {
+											while ($recorido = mysql_fetch_array($consulta11)) {
 											    // La variable recorrido almacena el array de la consulta anteriormente realizada 
+											    
+											 // aqui va la consulta para notification sent pero no me quedó tiempo de terminarla XD vida la liga¡¡¡¡
+
 											    if (mail($recorido['email'], 'Quiz Universidad', 
 																	   'Hola '. $recorido['first_name']."\n".
 																	   'El quiz '.$almacenar3.' del curso '.$almacenar5.' ha sido activado a partir de '.
@@ -107,7 +110,10 @@ while ($recorido = mysql_fetch_array($consulta1)) {
 																		}else{
 																			echo "Mensaje no enviado ";
 																		}
+												// If para enviar el correo a los estudaintes correspondientes con el método Mail utilizando Mercury	
 
+												$Conculta12=mysql_query("INSERT  INTO notification_sent(student_id,test_id)VALUES('$almacenar2','$almacenar8')");
+                                                // Consulta que inserta en la tabla notification_send los numeros de ID de los estudiantes a los que ya se les ha enviado el email.
 											}
 									}
 								}
