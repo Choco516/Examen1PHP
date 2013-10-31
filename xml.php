@@ -1,6 +1,8 @@
 ﻿<?php
+//Estructura XML
 $xmlstr = <<<XML
 <?xml version='1.0' standalone='yes'?>
+
 <configuracion>
 
  <database>
@@ -23,5 +25,6 @@ $xmlstr = <<<XML
 </configuracion>
 
 XML;
+
 ?>
  

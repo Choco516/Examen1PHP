@@ -1,7 +1,6 @@
 <?php
 
 $var= new Conf();
-//echo $var->getUserDB();
 
 Class Conf
 {
